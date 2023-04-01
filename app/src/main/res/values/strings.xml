@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Meowdoroapp</string>
+    <string name="_00_00_00">00:00:00</string>
+    <string name="botondeplay">BotondePlay</string>
+    <string name="botondereload">Botondereload</string>
+    <string name="mascota">mascota</string>
+    <string name="musica">musica</string>
+    <string name="usuario">usuario</string>
+    <string name="meowdoro">Meowdoro</string>
+    <string name="lista_de_tareas">Lista de tareas</string>
+    <string name="calendario">Calendario</string>
+    <string name="mascotas">Mascotas</string>
+    <string name="configuraci_n">Configuración</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="home">HOME</string>
+    <string name="next_song">Next song</string>
+    <string name="previus_song">Previus song</string>
+    <string name="stopsound">StopSound</string>
+</resources>

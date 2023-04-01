@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item android:id="@+id/lista_tareas"
+            android:icon="@drawable/pen"
+            android:title="@string/lista_de_tareas"/>
+        <item android:id="@+id/calendario"
+            android:icon="@drawable/calendar"
+            android:title="@string/calendario"/>
+        <item android:id="@+id/mascotas"
+            android:icon="@drawable/animal"
+            android:title="@string/mascotas"/>
+        <item android:id="@+id/configuracion"
+            android:icon="@drawable/settings"
+            android:title="@string/configuraci_n"/>
+        <item android:id="@+id/acercaDe"
+            android:icon="@drawable/info"
+            android:title="@string/acerca_de"/>
+    </group>
+</menu>
