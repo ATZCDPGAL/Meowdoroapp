@@ -138,6 +138,7 @@
         android:onClick="playsound"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.92"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.972"
@@ -160,52 +161,20 @@
         android:visibility="invisible"/>
 
     <ImageView
-        android:id="@+id/previus"
-        android:layout_width="33dp"
-        android:layout_height="32dp"
-        android:contentDescription="@string/previus_song"
-        android:onClick="previusSound"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/sound"
-        app:layout_constraintHorizontal_bias="0.788"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/sound"
-        app:layout_constraintVertical_bias="0.157"
-        app:srcCompat="@drawable/rewind"
-        android:visibility="invisible"
-        app:tint="@color/white" />
-
-    <ImageView
-        android:id="@+id/next"
-        android:layout_width="33dp"
-        android:layout_height="32dp"
-        android:rotationY="180"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.211"
-        app:layout_constraintStart_toEndOf="@+id/sound"
-        app:layout_constraintTop_toTopOf="@+id/sound"
-        app:layout_constraintVertical_bias="0.157"
-        app:srcCompat="@drawable/rewind"
-        app:tint="@color/white"
-        android:contentDescription="@string/next_song"
-        android:visibility="invisible"
-        android:onClick="nextSound" />
-
-    <ImageView
         android:id="@+id/stopSound"
         android:layout_width="33dp"
         android:layout_height="34dp"
+        android:contentDescription="@string/stopsound"
+        android:onClick="stopSound"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.92"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/sound"
         app:layout_constraintVertical_bias="0.058"
         app:srcCompat="@drawable/stop"
-        app:tint="@color/white"
-        android:contentDescription="@string/stopsound"
-        android:visibility="invisible"
-        android:onClick="stopSound"/>
+        app:tint="@color/white" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

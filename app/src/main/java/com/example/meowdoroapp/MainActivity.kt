@@ -4,7 +4,6 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.provider.ContactsContract.CommonDataKinds.Im
 import android.view.View
 import android.widget.ImageView
 import android.widget.SeekBar
@@ -16,9 +15,8 @@ class MainActivity : AppCompatActivity() {
     private var sound:MediaPlayer?=null
     private lateinit var play:ImageView
     private lateinit var stop:ImageView
-    private lateinit var nextSound:ImageView
-    private lateinit var prevSound:ImageView
     private val sounds = arrayOf(R.raw.forest, R.raw.rain, R.raw.ocean)
+    private var musicIndex = 0
 
     //Variable's of timer
     private lateinit var timer: CountDownTimer
@@ -37,8 +35,7 @@ class MainActivity : AppCompatActivity() {
         //Music
         play = findViewById(R.id.sound)
         stop = findViewById(R.id.stopSound)
-        nextSound = findViewById(R.id.next)
-        prevSound = findViewById(R.id.previus)
+
 
         play.setOnClickListener {
             playSound()
@@ -71,32 +68,34 @@ class MainActivity : AppCompatActivity() {
     }
 
     //Sound function's
-    fun playSound(){
-    if(sound==null){
-        sound = MediaPlayer.create(this, R.raw.forest)
-        sound!!.isLooping = true
-        sound!!.start()
-        play.visibility = View.INVISIBLE
-        prevSound.visibility = View.VISIBLE
-        nextSound.visibility = View.VISIBLE
-        stop.visibility = View.VISIBLE
-        }else{
+    fun playSound() {
+        if (sound == null) {
+            sound = MediaPlayer.create(this, sounds[musicIndex])
+            sound!!.isLooping = true
             sound!!.start()
+            play.visibility = View.INVISIBLE
+            stop.visibility = View.VISIBLE
+        } else {
+            sound?.start()
+        }
+        musicIndex = (musicIndex + 1) % sounds.size
+        sound!!.setOnCompletionListener {
+            sound!!.release()
+            sound = null
+            playSound()
         }
     }
 
     fun stopSound(){
         if(sound!=null){
-            sound!!.stop()
-            sound!!.release()
+            sound?.stop()
+            sound?.release()
+            sound?.release()
             sound = null
             play.visibility = View.VISIBLE
             stop.visibility = View.INVISIBLE
-            prevSound.visibility = View.INVISIBLE
-            nextSound.visibility = View.INVISIBLE
         }
     }
-
 
     override  fun onStop(){
         super.onStop()
